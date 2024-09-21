@@ -1,0 +1,69 @@
+Title: Automated Entity Extraction from Product Images: A Multi-Step Approach
+Abstract:
+Objective:
+This program aims to automatically extract specific entity values, particularly numerical measurements and their associated units, from product images.
+Methodology:
+
+Image Acquisition and Preprocessing:
+
+Download images from provided URLs
+Apply preprocessing techniques:
+a) Grayscale conversion
+b) Contrast enhancement
+c) Image sharpening
+
+
+Text Extraction:
+
+Utilize Optical Character Recognition (OCR) via Tesseract
+Implement a two-pass strategy:
+a) Initial attempt on unenhanced image
+b) Secondary attempt on enhanced image if necessary
+
+
+Entity Recognition and Extraction:
+
+Employ regex patterns customized for each entity type
+Utilize entity-to-unit mappings for validation
+Implement unit standardization (short form to full name)
+
+
+Measurement Selection:
+
+Identify all valid measurements for the target entity
+Select the highest value measurement with an allowed unit
+
+
+Parallel Processing:
+
+Use ThreadPoolExecutor for concurrent image processing
+Optimize efficiency for large datasets
+
+
+Error Handling and Logging:
+
+Manage exceptions for image downloads and processing
+Provide detailed logging for troubleshooting
+
+
+Output and Evaluation:
+
+Generate structured output for easy integration
+Include optional evaluation metrics:
+a) Accuracy
+b) Precision
+c) Recall
+d) F1-score
+
+
+
+Key Features:
+
+Adaptive image preprocessing
+Robust unit recognition and standardization
+Entity-specific measurement validation
+Scalable parallel processing
+Comprehensive error handling
+
+Conclusion:
+This approach offers a scalable and robust solution for extracting specific entity values from product images, combining image processing, OCR, and NLP techniques to achieve accurate results across varied image qualities and entity types.
